@@ -16,7 +16,7 @@ print(absolute_max);
 print('-----------Start of Program-------------')
 
 xs1 = x1/absolute_max   #Scale Voltages by absolute maximum
-xs2 = x1/absolute_max   #Scale Currents by absolute maximum
+xs2 = x2/absolute_max   #Scale Currents by absolute maximum
 results = result/absolute_max   #Scale Resistance by absolute maximum
 
 w = numpy.array([0.5,0.5]) # Weights
@@ -44,7 +44,7 @@ def train_whole_set(d1,d2, r1,w1):
         print(data)
         predict = run_network_once(d1[i],d2[i])
         print(predict)
-        w2 = a*(predict-r1[i])*data
+        w2 = a*(predict-r1[i])*data                         #Website mentions it should be actual - prediction
         print(w2)
         w1 = numpy.add(w1,w2)
         print(w1)
@@ -66,7 +66,9 @@ def calc_errors(d1,d2,r1):
     errors = numpy.divide(errors,result)*100
     return errors
 
-print(run_network_once(3/absolute_max,1.5/absolute_max))
+#print(run_network_once(3/absolute_max,1.5/absolute_max))
 w=train_whole_set(xs1,xs2,results,w)
-print(run_network_once(3/absolute_max,1.5/absolute_max))
-print(calc_errors(xs1,xs2,results))
+#print(run_network_once(3/absolute_max,1.5/absolute_max))
+errorsP = calc_errors(xs1,xs2,results)
+print('Average Error (%):')
+print(numpy.average(errorsP))
