@@ -2,9 +2,9 @@
 
 a = 0.01 #Learning Rate
 
-x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4,   5,    7]) #Voltages
-x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1,   2,    4]) #Currents
-result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4, 2.5, 1.75]) #Resistances
+x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4,   5,    7,   8, 9]) #Voltages
+x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1,   2,    4, 1.6, 3]) #Currents
+result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4, 2.5, 1.75,   5, 3]) #Resistances
 
 MAX_VOLTAGE = max(x1)   #Find maximum Voltage
 MAX_CURRENT = max(x2)   #Find maximum Current
@@ -51,6 +51,14 @@ def train_once(d1,d2, r1,w1):
         print('------------------End-------------------')
     return w1
 
+def calc_errors(d1,d2,r1):
+    errors = results
+    for i in range(len(results)):
+        errors[i] = errors[i] - run_network_once(xs1[i],xs2[i])
+    errors = absolute_max*errors
+    return errors
+
 print(run_network_once(3/absolute_max,1.5/absolute_max))
 w=train_once(xs1,xs2,results,w)
 print(run_network_once(3/absolute_max,1.5/absolute_max))
+print(calc_errors(xs1,xs2,results))
