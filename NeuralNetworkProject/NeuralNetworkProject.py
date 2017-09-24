@@ -1,5 +1,9 @@
-x1 = [2, 4, 5, 8, 9] # Number of Hours Slept.
-x2 = [4, 3, 8, 2, 3] # Number of Hours Studied
+﻿x1 = [1,2,4,5] #Voltages
+x2 = [7,10,12,13] #Currents
+
+result = [1,0.7,0.4,0.2] #Resistances
+
+w = [0.5,0.5] # Weights
 
 data = [0,0]
 
