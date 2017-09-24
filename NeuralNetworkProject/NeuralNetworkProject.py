@@ -1,23 +1,23 @@
 ﻿import numpy
 
-a = 0.5 #Learning Rate
+a = 0.01 #Learning Rate
 
-x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4]) #Voltages
-x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1]) #Currents
-result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4]) #Resistances
+x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4,   5,    7]) #Voltages
+x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1,   2,    4]) #Currents
+result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4, 2.5, 1.75]) #Resistances
 
-MAX_VOLTAGE = max(x1)
-MAX_CURRENT = max(x2)
-MAX_RESISTANCE = max(result)
+MAX_VOLTAGE = max(x1)   #Find maximum Voltage
+MAX_CURRENT = max(x2)   #Find maximum Current
+MAX_RESISTANCE = max(result)    #Find maximum Resistance
 
-absolute_max = max([MAX_VOLTAGE, MAX_CURRENT, MAX_RESISTANCE])
+absolute_max = max([MAX_VOLTAGE, MAX_CURRENT, MAX_RESISTANCE])  #Find overall maximum
 print('Absolute Maximum:')
 print(absolute_max);
 print('-----------Start of Program-------------')
 
-xs1 = x1/absolute_max
-xs2 = x1/absolute_max
-results = result/absolute_max
+xs1 = x1/absolute_max   #Scale Voltages by absolute maximum
+xs2 = x1/absolute_max   #Scale Currents by absolute maximum
+results = result/absolute_max   #Scale Resistance by absolute maximum
 
 w = numpy.array([0.5,0.5]) # Weights
 
