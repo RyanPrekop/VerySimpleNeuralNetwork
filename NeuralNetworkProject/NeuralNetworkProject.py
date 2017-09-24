@@ -2,9 +2,9 @@
 
 a = 0.01 #Learning Rate
 
-x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4,   5,    7,   8, 9,  11, 12,   3,   2]) #Voltages
-x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1,   2,    4, 1.6, 3, 5.5,  3, 0.6, 2.5]) #Currents
-result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4, 2.5, 1.75,   5, 3,   2,  4,   5, 0.8]) #Resistances
+x1 = numpy.array(    [  1,    3, 6,  10, 15, 18, 20,    3,  4,   5,    7,   8, 9,  11, 12,   3,   2,    1, 14]) #Voltages
+x2 = numpy.array(    [0.5,  1.5, 2, 2.5,  3,  2,  2,  0.1,  1,   2,    4, 1.6, 3, 5.5,  3, 0.6, 2.5,    4,  2]) #Currents
+result = numpy.array([  2,    2, 3,   4,  5,  9, 10,   30,  4, 2.5, 1.75,   5, 3,   2,  4,   5, 0.8, 0.25,  7]) #Resistances
 
 MAX_VOLTAGE = max(x1)   #Find maximum Voltage
 MAX_CURRENT = max(x2)   #Find maximum Current
