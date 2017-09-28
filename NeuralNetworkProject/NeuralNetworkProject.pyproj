@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5bf4a1b5-17cc-43b1-837e-ecd7817e1789</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>NeuralNetworkProject.py</StartupFile>
+    <StartupFile>mainProgram.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="mainProgram.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollGame.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NeuralNetworkProject.py" />
   </ItemGroup>
   <PropertyGroup>
